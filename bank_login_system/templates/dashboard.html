@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #dfe9f3, #ffffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    .dashboard-container {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #1f2937;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      background-color: #3730a3;
+      transform: scale(1.02);
+    }
+
+    .logout {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .logout a {
+      color: #d32f2f;
+      text-decoration: none;
+    }
+
+    .logout a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .dashboard-container {
+        margin: 40px 16px;
+        padding: 24px;
+      }
+
+      .btn {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>Welcome, {{ user.name }} 👋</h2>
+
+    <a href="{{ url_for('deposit') }}" class="btn">💰 Deposit</a>
+    <a href="{{ url_for('withdraw') }}" class="btn">💸 Withdraw</a>
+    <a href="{{ url_for('transfer') }}" class="btn">🔁 Transfer</a>
+    <a href="{{ url_for('transactions') }}" class="btn">📄 View Transactions</a>
+    <a href="{{ url_for('balance') }}" class="btn">📊 Check Balance</a>
+
+    <div class="logout">
+      <p>Not you? <a href="{{ url_for('login') }}">Logout</a></p>
+    </div>
+  </div>
+</body>
+</html>

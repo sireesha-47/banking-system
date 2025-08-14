@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Balance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e0ecf8, #ffffff);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .balance-container {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .balance-amount {
+      font-size: 40px;
+      font-weight: bold;
+      color: #22c55e; /* green color */
+      margin-bottom: 30px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      padding: 10px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #3b82f6;
+      text-decoration: none;
+      border: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 500px) {
+      .balance-container {
+        margin: 50px 16px;
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="balance-container">
+    <h2>Your Current Balance 💳</h2>
+    <div class="balance-amount">₹ {{ balance }}</div>
+    <a href="{{ url_for('dashboard') }}" class="btn-back">Back to Dashboard</a>
+  </div>
+</body>
+</html>
